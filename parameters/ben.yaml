@@ -7,8 +7,10 @@ mission_manager/hover_maximum_speed: 1.0 # m/s
 mru_transform/sensors:
  - name: posmv
    topics: { position: 'sensors/posmv/position', orientation: 'sensors/posmv/orientation', velocity: 'sensors/posmv/velocity'}
+ - name: gps-sync
+   topics: { position: 'sensors/oem/sync/position', orientation: 'sensors/oem/sync/orientation', velocity: 'sensors/oem/sync/velocity'}
  - name: gps
-   topics: { position: 'sensors/gps/position', orientation: 'sensors/heading', velocity: 'sensors/gps/velocity'}
+   topics: { position: 'sensors/oem/position', orientation: 'sensors/oem/orientation', velocity: 'sensors/oem/velocity'}
       
 helm_manager/output_type: 'helm'
 helm_manager/helm/max_speed: 2.75

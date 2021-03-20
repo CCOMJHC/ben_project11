@@ -1,0 +1,25 @@
+<launch>
+    <arg name="namespace" default="remote"/>
+    <arg name="remoteHost" default="penguinz"/>
+    <arg name="remotePort" default="4201"/>
+    <arg name="robotNamespace" default="ben"/>
+    <arg name="backgroundChart" default="$(find camp)/workspace/13283/13283_2.KAP"/>
+
+    <include file="$(find ben_description)/launch/load.launch">
+      <arg name="namespace" value="$(arg robotNamespace)"/>
+    </include>
+
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" ns="$(arg robotNamespace)"/>
+
+    <include file="$(find project11)/launch/remote_operator.launch">
+      <arg name="namespace" value="$(arg namespace)"/>
+      <arg name="remoteHost" value="$(arg remoteHost)"/>
+      <arg name="remotePort" value="$(arg remotePort)"/>
+      <arg name="robotNamespace" value="$(arg robotNamespace)"/>
+      <arg name="backgroundChart" value="$(arg backgroundChart)"/>
+    </include>
+
+    <node pkg="rosservice" type="rosservice" name="get_lidar" args="call /$(arg namespace)/udp_bridge_remote/remote_subscribe $(arg remoteHost) $(arg remotePort) /$(arg robotNamespace)/sensors/lidar/velodyne_points /$(arg robotNamespace)/sensors/lidar/velodyne_points 1 0.0"/>
+
+
+</launch>

@@ -19,7 +19,4 @@
       <arg name="backgroundChart" value="$(arg backgroundChart)"/>
     </include>
 
-    <node pkg="rosservice" type="rosservice" name="get_lidar" args="call /$(arg namespace)/udp_bridge_remote/remote_subscribe $(arg remoteHost) $(arg remotePort) /$(arg robotNamespace)/sensors/lidar/velodyne_points /$(arg robotNamespace)/sensors/lidar/velodyne_points 1 0.0"/>
-
-
 </launch>

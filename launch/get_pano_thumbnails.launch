@@ -1,0 +1,8 @@
+<launch>
+  <arg name="robotNamespace" default="ben"/>
+  <arg name="remote" default="ben"/>
+  <arg name="namespace" default="operator"/>
+
+  <node pkg="rosservice" type="rosservice" name="get_pano1" args="call /$(arg namespace)/udp_bridge/remote_subscribe $(arg remote) /$(arg robotNamespace)/sensors/cameras/pano_1/image_raw/compressed /$(arg robotNamespace)/sensors/cameras/pano_1/image_raw/compressed 1 0.0"/>
+
+</launch>

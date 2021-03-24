@@ -4,6 +4,7 @@
     <arg name="remotePort" default="4201"/>
     <arg name="robotNamespace" default="ben"/>
     <arg name="backgroundChart" default="$(find camp)/workspace/13283/13283_2.KAP"/>
+    <arg name="enableJoystick" default="false"/>
 
     <include file="$(find ben_description)/launch/load.launch">
       <arg name="namespace" value="$(arg robotNamespace)"/>
@@ -17,6 +18,7 @@
       <arg name="remotePort" value="$(arg remotePort)"/>
       <arg name="robotNamespace" value="$(arg robotNamespace)"/>
       <arg name="backgroundChart" value="$(arg backgroundChart)"/>
+      <arg name="enableJoystick" value="$(arg enableJoystick)"/>
     </include>
 
 </launch>

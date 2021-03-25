@@ -1,0 +1,26 @@
+<launch>
+  <arg name="namespace" default="ben"/>
+
+  <node pkg="rosbag" type="record" name="sensor_logger"  ns="$(arg namespace)" args="-o $(find project11)/logs/sensors --split --duration=15m
+        odom
+        /tf
+        /tf_static
+        sensors/posmv/orientation
+        sensors/posmv/position
+        sensors/posmv/time_reference
+        sensors/posmv/velocity
+        nav/active_sensor
+        
+        sensors/lidar/velodyne_points
+
+        sensors/cameras/pano_1/image_raw/compressed
+        sensors/cameras/pano_2/image_raw/compressed
+        sensors/cameras/pano_3/image_raw/compressed
+        sensors/cameras/pano_4/image_raw/compressed
+        sensors/cameras/pano_5/image_raw/compressed
+        sensors/cameras/pano_6/image_raw/compressed
+
+        " />
+
+
+</launch>

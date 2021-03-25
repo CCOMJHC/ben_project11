@@ -7,4 +7,7 @@
   <node pkg="rosservice" type="rosservice" name="get_pano2" args="call /$(arg namespace)/udp_bridge/remote_subscribe $(arg remote) /$(arg robotNamespace)/sensors/cameras/pano_2/thumbnail/image/compressed /$(arg robotNamespace)/sensors/cameras/pano_2/thumbnail/image/compressed 1 1.0"/>
   <node pkg="rosservice" type="rosservice" name="get_pano5" args="call /$(arg namespace)/udp_bridge/remote_subscribe $(arg remote) /$(arg robotNamespace)/sensors/cameras/pano_5/thumbnail/image/compressed /$(arg robotNamespace)/sensors/cameras/pano_5/thumbnail/image/compressed 1 1.0"/>
 
+  <node pkg="rosservice" type="rosservice" name="get_octomap" args="call /$(arg namespace)/udp_bridge/remote_subscribe $(arg remote) /$(arg robotNamespace)/sensors/lidar/occupied_cells_vis_array /$(arg robotNamespace)/sensors/lidar/occupied_cells_vis_array 1 0.5"/>
+
+
 </launch>

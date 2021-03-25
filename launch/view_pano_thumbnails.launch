@@ -1,0 +1,18 @@
+<launch>
+  <arg name="robotNamespace" default="ben"/>
+  <arg name="namespace" default="operator"/>
+
+  <node pkg="image_view" type="image_view" name="view_pano1" ns="$(arg namespace)">
+    <remap from="image" to="$(arg robotNamespace)/sensors/cameras/pano_1/thumbnail/image"/>
+    <param name="image_transport" value="compressed"/>
+  </node>
+  <node pkg="image_view" type="image_view" name="view_pano2" ns="$(arg namespace)">
+    <remap from="image" to="$(arg robotNamespace)/sensors/cameras/pano_2/thumbnail/image"/>
+    <param name="image_transport" value="compressed"/>
+  </node>
+  <node pkg="image_view" type="image_view" name="view_pano5" ns="$(arg namespace)">
+    <remap from="image" to="$(arg robotNamespace)/sensors/cameras/pano_5/thumbnail/image"/>
+    <param name="image_transport" value="compressed"/>
+  </node>
+
+</launch>

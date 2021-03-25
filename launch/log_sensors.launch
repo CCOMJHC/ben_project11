@@ -1,7 +1,8 @@
 <launch>
   <arg name="namespace" default="ben"/>
+  <arg name="duration" default="15m"/>
 
-  <node pkg="rosbag" type="record" name="sensor_logger"  ns="$(arg namespace)" args="-o $(find project11)/logs/sensors --split --duration=15m
+  <node pkg="rosbag" type="record" name="sensor_logger"  ns="$(arg namespace)" args="-o $(find project11)/logs/sensors --split --duration=$(arg duration)
         odom
         /tf
         /tf_static

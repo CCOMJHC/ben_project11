@@ -1,0 +1,21 @@
+<launch>
+  <arg name="robotNamespace" default="ben"/>
+  <arg name="bagFile"/>
+  <arg name="delay" default="15"/>  <!-- allow time to load rviz -->
+  <arg name="rvizConfig" default="$(find ben_project11)/config/ben.rviz"/>
+
+  <param name="/use_sim_time" type="bool" value="true"/>
+
+  <include file="$(find ben_description)/launch/load.launch">
+    <arg name="namespace" value="$(arg robotNamespace)"/>
+  </include>
+
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" ns="$(arg robotNamespace)"/>
+
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizConfig)"/>
+
+  <node pkg="rosbag" type="play" name="bagplay" args="--clock --delay=$(arg delay) --loop $(arg bagFile)" ns="$(arg robotNamespace)">
+    <remap from="clock" to="/clock"/>
+  </node>
+
+</launch>

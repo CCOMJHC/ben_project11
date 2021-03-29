@@ -14,12 +14,15 @@
         
         sensors/lidar/velodyne_points
 
-        sensors/cameras/pano_1/image_raw/compressed
-        sensors/cameras/pano_2/image_raw/compressed
-        sensors/cameras/pano_3/image_raw/compressed
-        sensors/cameras/pano_4/image_raw/compressed
-        sensors/cameras/pano_5/image_raw/compressed
-        sensors/cameras/pano_6/image_raw/compressed
+        sensors/cameras/pano_1/image_raw
+        sensors/cameras/pano_2/image_raw
+        sensors/cameras/pano_3/image_raw
+        sensors/cameras/pano_4/image_raw
+        sensors/cameras/pano_5/image_raw
+        sensors/cameras/pano_6/image_raw
+
+        sensors/cameras/pano_1/detection_image
+        sensors/cameras/pano_1/yolo3/bounding_boxes
 
         " />
 

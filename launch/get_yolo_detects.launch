@@ -1,0 +1,16 @@
+<launch>
+  <arg name="robotNamespace" default="ben"/>
+  <arg name="remote" default="ben"/>
+  <arg name="namespace" default="operator"/>
+  <arg name="cameraPeriod" default="1.0"/>
+
+  <node pkg="rosservice" type="rosservice" name="get_pano1_yolo" args="call /$(arg namespace)/udp_bridge/remote_subscribe $(arg remote) /$(arg robotNamespace)/sensors/cameras/pano_1/yolo_thumbnail/image/compressed /$(arg robotNamespace)/sensors/cameras/pano_1/yolo_thumbnail/image/compressed 1 $(arg cameraPeriod)"/>
+  <node pkg="rosservice" type="rosservice" name="get_pano2_yolo" args="call /$(arg namespace)/udp_bridge/remote_subscribe $(arg remote) /$(arg robotNamespace)/sensors/cameras/pano_2/yolo_thumbnail/image/compressed /$(arg robotNamespace)/sensors/cameras/pano_2/yolo_thumbnail/image/compressed 1 $(arg cameraPeriod)"/>
+  <node pkg="rosservice" type="rosservice" name="get_pano3_yolo" args="call /$(arg namespace)/udp_bridge/remote_subscribe $(arg remote) /$(arg robotNamespace)/sensors/cameras/pano_3/yolo_thumbnail/image/compressed /$(arg robotNamespace)/sensors/cameras/pano_3/yolo_thumbnail/image/compressed 1 $(arg cameraPeriod)"/>
+  <node pkg="rosservice" type="rosservice" name="get_pano4_yolo" args="call /$(arg namespace)/udp_bridge/remote_subscribe $(arg remote) /$(arg robotNamespace)/sensors/cameras/pano_4/yolo_thumbnail/image/compressed /$(arg robotNamespace)/sensors/cameras/pano_4/yolo_thumbnail/image/compressed 1 $(arg cameraPeriod)"/>
+  <node pkg="rosservice" type="rosservice" name="get_pano5_yolo" args="call /$(arg namespace)/udp_bridge/remote_subscribe $(arg remote) /$(arg robotNamespace)/sensors/cameras/pano_5/yolo_thumbnail/image/compressed /$(arg robotNamespace)/sensors/cameras/pano_5/yolo_thumbnail/image/compressed 1 $(arg cameraPeriod)"/>
+  <node pkg="rosservice" type="rosservice" name="get_pano6_yolo" args="call /$(arg namespace)/udp_bridge/remote_subscribe $(arg remote) /$(arg robotNamespace)/sensors/cameras/pano_6/yolo_thumbnail/image/compressed /$(arg robotNamespace)/sensors/cameras/pano_6/yolo_thumbnail/image/compressed 1 $(arg cameraPeriod)"/>
+
+
+
+</launch>

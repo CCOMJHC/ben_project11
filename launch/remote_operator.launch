@@ -23,6 +23,8 @@
       <arg name="enableJoystick" value="$(arg enableJoystick)"/>
     </include>
 
+    <node pkg="rosservice" type="rosservice" name="get_ais" args="call /$(arg namespace)/udp_bridge/remote_subscribe $(arg operatorNamespace) /$(arg robotNamespace)/sensors/ais/contact /$(arg robotNamespace)/sensors/ais/contact 1 0.0"/>
+
     <include file="$(find ben_project11)/launch/get_sensors.launch">
       <arg name="namespace" value="$(arg namespace)"/>
       <arg name="remote" value="$(arg operatorNamespace)"/>

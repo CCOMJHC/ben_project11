@@ -5,9 +5,9 @@
   <arg name="cameraPeriod" default="1.0"/>
   <arg name="lidarPeriod" default="0.5"/>
 
-  <node pkg="rosservice" type="rosservice" name="get_pano1" args="call /$(arg namespace)/udp_bridge/remote_subscribe $(arg remote) /$(arg robotNamespace)/sensors/cameras/pano_1/thumbnail/image/compressed /$(arg robotNamespace)/sensors/cameras/pano_1/thumbnail/image/compressed 1 $(arg cameraPeriod)"/>
-  <node pkg="rosservice" type="rosservice" name="get_pano2" args="call /$(arg namespace)/udp_bridge/remote_subscribe $(arg remote) /$(arg robotNamespace)/sensors/cameras/pano_2/thumbnail/image/compressed /$(arg robotNamespace)/sensors/cameras/pano_2/thumbnail/image/compressed 1 $(arg cameraPeriod)"/>
-  <node pkg="rosservice" type="rosservice" name="get_pano6" args="call /$(arg namespace)/udp_bridge/remote_subscribe $(arg remote) /$(arg robotNamespace)/sensors/cameras/pano_6/thumbnail/image/compressed /$(arg robotNamespace)/sensors/cameras/pano_6/thumbnail/image/compressed 1 $(arg cameraPeriod)"/>
+  <node pkg="rosservice" type="rosservice" name="get_pano1" args="call /$(arg namespace)/udp_bridge/remote_subscribe $(arg remote) /$(arg robotNamespace)/sensors/cameras/pano_1/thumbnail/image /$(arg robotNamespace)/sensors/cameras/pano_1/thumbnail/image 1 $(arg cameraPeriod)"/>
+  <node pkg="rosservice" type="rosservice" name="get_pano2" args="call /$(arg namespace)/udp_bridge/remote_subscribe $(arg remote) /$(arg robotNamespace)/sensors/cameras/pano_2/thumbnail/image /$(arg robotNamespace)/sensors/cameras/pano_2/thumbnail/image 1 $(arg cameraPeriod)"/>
+  <node pkg="rosservice" type="rosservice" name="get_pano6" args="call /$(arg namespace)/udp_bridge/remote_subscribe $(arg remote) /$(arg robotNamespace)/sensors/cameras/pano_6/thumbnail/image /$(arg robotNamespace)/sensors/cameras/pano_6/thumbnail/image 1 $(arg cameraPeriod)"/>
 
   <node pkg="rosservice" type="rosservice" name="get_octomap" args="call /$(arg namespace)/udp_bridge/remote_subscribe $(arg remote) /$(arg robotNamespace)/sensors/lidar/occupied_cells_vis_array /$(arg robotNamespace)/sensors/lidar/occupied_cells_vis_array 1 $(arg lidarPeriod)"/>
 

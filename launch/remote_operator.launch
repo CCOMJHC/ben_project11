@@ -40,4 +40,11 @@
       <arg name="cameraPeriod" value="0"/>
     </include>
 
+    <include file="$(find ben_project11)/launch/get_remote_radar.launch">
+      <arg name="namespace" value="$(arg namespace)"/>
+      <arg name="remote" value="$(arg operatorNamespace)"/>
+      <arg name="robotNamespace" value="$(arg robotNamespace)"/>
+    </include>
+
+
 </launch>

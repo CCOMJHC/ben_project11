@@ -1,0 +1,19 @@
+plugins: 
+- {name: obstacles,        type: "costmap_2d::VoxelLayer"}
+publish_frequency: 1.0
+footprint: [[2.65, 0], [2.6, 0.1], [2.4, 0.4], [1.9, 0.6], [1.0, 0.85], [-1.3, 0.85], [-1.35, 0.4], [-1.6, 0.35], [-1.6, -0.35], [-1.35, -0.4], [-1.3, -0.85], [1.0, -0.85], [1.9, -0.6], [2.4, -0.4], [2.6, -0.1], [2.65, 0]]
+
+global_frame: ben/map
+robot_base_frame: ben/base_link
+rolling_window: true
+width: 1000
+height: 1000
+resolution: .5
+max_obstacle_height: 5
+
+obstacles:
+    observation_sources: lidar
+    lidar: {data_type: PointCloud2, sensor_frame: ben/lidar, clearing: true, marking: true, topic: sensors/lidar/velodyne_points_filtered, max_obstacle_height: 5, obstacle_range: 85, raytrace_range: 90}
+    z_resolution: .5
+    z_voxels: 12
+    publish_voxel_map: true

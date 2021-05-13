@@ -1,29 +1,26 @@
 <launch>
   <arg name="namespace" default="ben"/>
   <arg name="duration" default="15m"/>
+  <arg name="lidarDuration" default="1h"/>
 
-  <node pkg="rosbag" type="record" name="sensor_logger"  ns="$(arg namespace)" args="-o $(find project11)/logs/sensors --split --duration=$(arg duration)
-        odom
+  <node pkg="rosbag" type="record" name="pano_logger"  ns="$(arg namespace)" args="-o $(find project11)/logs/cameras --split --duration=$(arg duration)
         /tf
         /tf_static
-        sensors/posmv/orientation
-        sensors/posmv/position
-        sensors/posmv/time_reference
-        sensors/posmv/velocity
         nav/active_sensor
-        
-        sensors/lidar/velodyne_points
-
         sensors/cameras/pano_1/image_raw
         sensors/cameras/pano_2/image_raw
         sensors/cameras/pano_3/image_raw
         sensors/cameras/pano_4/image_raw
         sensors/cameras/pano_5/image_raw
         sensors/cameras/pano_6/image_raw
+        " />
 
-        sensors/cameras/pano_1/detection_image
-        sensors/cameras/pano_1/yolo3/bounding_boxes
-
+  <node pkg="rosbag" type="record" name="lidar_logger"  ns="$(arg namespace)" args="-o $(find project11)/logs/lidar --split --duration=$(arg lidarDuration)
+        /tf
+        /tf_static
+        nav/active_sensor
+        
+        sensors/lidar/velodyne_points
         " />
 
 

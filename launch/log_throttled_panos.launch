@@ -1,6 +1,7 @@
 <launch>
   <arg name="namespace" default="ben"/>
   <arg name="duration" default="15m"/>
+  <arg name="logDirectory"/>
 
   <node pkg="topic_tools" type="throttle" name="throttle_pano_1" args="messages /ben/sensors/cameras/pano_1/image_raw .5"/>
   <node pkg="topic_tools" type="throttle" name="throttle_pano_2" args="messages /ben/sensors/cameras/pano_2/image_raw .5"/>
@@ -9,18 +10,16 @@
   <node pkg="topic_tools" type="throttle" name="throttle_pano_5" args="messages /ben/sensors/cameras/pano_5/image_raw .5"/>
   <node pkg="topic_tools" type="throttle" name="throttle_pano_6" args="messages /ben/sensors/cameras/pano_6/image_raw .5"/>
 
-  <node pkg="rosbag" type="record" name="pano_logger_throttled"  ns="$(arg namespace)" args="-o $(find project11)/logs/cameras_throttled --lz4 --split --duration=$(arg duration)
+  <node pkg="rosbag" type="record" name="pano_logger_throttled"  ns="$(arg namespace)" args="-o $(arg logDirectory)/cameras_throttled --lz4 --split --duration=$(arg duration)
         /tf
         /tf_static
-        nav/active_sensor
-        sensors/cameras/pano_1/image_raw_throttle
-        sensors/cameras/pano_2/image_raw_throttle
-        sensors/cameras/pano_3/image_raw_throttle
-        sensors/cameras/pano_4/image_raw_throttle
-        sensors/cameras/pano_5/image_raw_throttle
-        sensors/cameras/pano_6/image_raw_throttle
+        /$(arg namespace)/nav/active_sensor
+        /$(arg namespace)/sensors/cameras/pano_1/image_raw_throttle
+        /$(arg namespace)/sensors/cameras/pano_2/image_raw_throttle
+        /$(arg namespace)/sensors/cameras/pano_3/image_raw_throttle
+        /$(arg namespace)/sensors/cameras/pano_4/image_raw_throttle
+        /$(arg namespace)/sensors/cameras/pano_5/image_raw_throttle
+        /$(arg namespace)/sensors/cameras/pano_6/image_raw_throttle
         " />
-
-
 
 </launch>

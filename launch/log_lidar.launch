@@ -1,13 +1,15 @@
 <launch>
   <arg name="namespace" default="ben"/>
   <arg name="duration" default="1h"/>
+  <arg name="logDirectory"/>
 
-  <node pkg="rosbag" type="record" name="lidar_logger"  ns="$(arg namespace)" args="-o $(find project11)/logs/lidar --lz4 --split --duration=$(arg duration)
+
+  <node pkg="rosbag" type="record" name="lidar_logger"  ns="$(arg namespace)" args="-o $(arg logDirectory)/lidar --lz4 --split --duration=$(arg duration)
         /tf
         /tf_static
-        nav/active_sensor
+        /$(arg namespace)/nav/active_sensor
         
-        sensors/lidar/velodyne_points
+        /$(arg namespace)/sensors/lidar/velodyne_points
         " />
 
 

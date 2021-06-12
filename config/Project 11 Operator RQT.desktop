@@ -1,0 +1,8 @@
+[Desktop Entry]
+Comment=
+Terminal=true
+Name=Project 11 Operator rqt
+Exec=/home/field/project11/catkin_ws/src/ccomjhc/robots/ben_project11/scripts/start_tmux_operator_rqt.sh
+Type=Application
+Icon=/home/field/project11/catkin_ws/src/ccomjhc/camp/src/camp--icon.png
+

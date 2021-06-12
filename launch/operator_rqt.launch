@@ -1,0 +1,4 @@
+<launch>
+  <node pkg="rqt_gui" type="rqt_gui" name="rqt-operaotor" args="--perspective operator"/>
+  <node pkg="rqt_gui" type="rqt_gui" name="rqt-radar" args="--perspective radar"/>
+</launch>

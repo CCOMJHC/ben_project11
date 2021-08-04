@@ -1,0 +1,11 @@
+plugins: 
+- {name: chart,            type: "s57_layer::S57Layer"}
+publish_frequency: 0.1
+update_frequency: 0.1
+rolling_window: true
+width: 50000
+height: 50000
+resolution: 1
+
+chart:
+    foo: bar

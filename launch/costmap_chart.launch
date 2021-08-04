@@ -1,0 +1,8 @@
+<launch>
+  <arg name="namespace" default="ben"/>
+
+  <rosparam file="$(find ben_project11)/config/costmap_common.yaml" command="load" ns="$(arg namespace)/costmap_chart/costmap" />
+  <rosparam file="$(find ben_project11)/config/costmap_chart.yaml" command="load" ns="$(arg namespace)/costmap_chart/costmap" />
+  <node pkg="costmap_2d" type="costmap_2d_node" name="costmap_chart" ns="$(arg namespace)">
+  </node>
+</launch>

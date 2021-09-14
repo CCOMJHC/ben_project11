@@ -1,0 +1,13 @@
+<launch>
+  <arg name="namespace" default="ben"/>
+
+  <node pkg="move_base" type="move_base" name="move_base" ns="$(arg namespace)">
+    <rosparam file="$(find ben_project11)/config/costmap_common.yaml" command="load" ns="global_costmap" />
+    <rosparam file="$(find ben_project11)/config/costmap_chart.yaml" command="load" ns="global_costmap" />
+    <rosparam file="$(find ben_project11)/config/costmap_common.yaml" command="load" ns="local_costmap" />
+    <rosparam file="$(find ben_project11)/config/costmap.yaml" command="load" ns="local_costmap" />
+    <param name="base_global_planner" value="global_planner/GlobalPlanner"/>
+  </node>
+
+
+</launch>

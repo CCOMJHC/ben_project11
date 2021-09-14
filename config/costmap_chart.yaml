@@ -1,11 +1,15 @@
 plugins: 
 - {name: chart,            type: "s57_layer::S57Layer"}
+- {name: inflation,        type: "costmap_2d::InflationLayer"}
 publish_frequency: 0.1
 update_frequency: 0.1
 rolling_window: true
-width: 50000
-height: 50000
-resolution: 1
+width: 30000
+height: 30000
+resolution: 3
 
 chart:
     foo: bar
+
+inflation:
+    inflation_radius: 10

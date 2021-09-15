@@ -12,4 +12,5 @@ chart:
     foo: bar
 
 inflation:
-    inflation_radius: 10
+    inflation_radius: 75
+    cost_scaling_factor: 0.1

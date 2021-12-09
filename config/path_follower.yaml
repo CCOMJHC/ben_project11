@@ -1,0 +1,4 @@
+base_local_planner: path_follower/PathFollower
+
+PathFollower:
+  base_frame: "ben/base_link"

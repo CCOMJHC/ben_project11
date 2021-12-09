@@ -3,10 +3,35 @@
 
   <node pkg="move_base" type="move_base" name="move_base" ns="$(arg namespace)">
     <rosparam file="$(find ben_project11)/config/costmap_common.yaml" command="load" ns="global_costmap" />
-    <rosparam file="$(find ben_project11)/config/costmap_chart.yaml" command="load" ns="global_costmap" />
+    <!-- <rosparam file="$(find ben_project11)/config/costmap_chart.yaml" command="load" ns="global_costmap" /> -->
     <rosparam file="$(find ben_project11)/config/costmap_common.yaml" command="load" ns="local_costmap" />
-    <rosparam file="$(find ben_project11)/config/costmap.yaml" command="load" ns="local_costmap" />
-    <param name="base_global_planner" value="global_planner/GlobalPlanner"/>
+    <!-- <rosparam file="$(find ben_project11)/config/costmap.yaml" command="load" ns="local_costmap" /> -->
+    <!-- <param name="base_global_planner" value="global_planner/GlobalPlanner"/> -->
+    <rosparam file="$(find ben_project11)/config/dubins_planner.yaml" command="load"/>
+    <rosparam file="$(find ben_project11)/config/path_follower.yaml" command="load"/>
+    <param name="PathFollower/base_frame" value="$(arg namespace)/base_link"/>
+    <remap from="cmd_vel" to="project11/piloting_mode/autonomous/cmd_vel_unstamped"/>
+  </node>
+
+  <node pkg="twiststamped_to_twist" type="twist_to_twiststamped_node" name="twist_to_stamped" ns="$(arg namespace)">
+    <remap from="input" to="project11/piloting_mode/autonomous/cmd_vel_unstamped"/>
+    <remap from="output" to="project11/piloting_mode/autonomous/cmd_vel"/>
+    <param name="frame_id" value="$(arg namespace)/base_link"/>
+  </node>
+
+
+  <node name="crab_angle_pid" pkg="pid" type="controller" ns="$(arg namespace)/move_base/PathFollower">
+    <param name="Kp" value="6.0" />
+    <param name="Ki" value="0.5" />
+    <param name="Kd" value="0.6" />
+    <param name="upper_limit" value="90" />
+    <param name="lower_limit" value="-90" />
+    <param name="windup_limit" value="50" />
+    <remap from="control_effort" to="crab_angle_pid/control_effort"/>
+    <remap from="pid_debug" to="crab_angle_pid/pid_debug"/>
+    <remap from="pid_enable" to="crab_angle_pid/pid_enable"/>
+    <remap from="setpoint" to="crab_angle_pid/setpoint"/>
+    <remap from="state" to="crab_angle_pid/state"/>
   </node>
 
 

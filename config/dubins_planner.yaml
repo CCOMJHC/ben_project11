@@ -1,0 +1,5 @@
+base_global_planner: dubins_planner/DubinsPlanner
+
+DubinsPlanner:
+  step_size: 2.5
+  radius: 15

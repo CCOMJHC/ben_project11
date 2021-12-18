@@ -20,8 +20,8 @@ nav_core:
     publish_frequency: 0.5
     update_frequency: 0.5
     rolling_window: true
-    width: 20000
-    height: 20000
+    width: 10000
+    height: 10000
     resolution: 3
 
     inflation:

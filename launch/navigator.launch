@@ -8,6 +8,7 @@
 
   <node pkg="project11_navigation" type="navigator" name="navigator" ns="$(arg namespace)">
     <rosparam file="$(find ben_project11)/config/navigator.yaml" command="load"/>
+    <param name="base_frame" value="$(arg namespace)/base_link"/>
     <remap from="~/cmd_vel" to="project11/piloting_mode/autonomous/cmd_vel"/>
     <remap from="~/enable" to="project11/piloting_mode/autonomous/active"/>
     <remap from="odom" to="project11/odom"/>

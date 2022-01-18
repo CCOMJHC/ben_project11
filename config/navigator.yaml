@@ -45,8 +45,8 @@ nav_core:
     step_size: 2.5
     radius: 15
 
-  base_local_planner: path_follower/PathFollower
+  base_local_planner: path_follower/PathFollowerPlanner
 
-  PathFollower:
+  PathFollowerPlanner:
     base_frame: "ben/base_link"
 

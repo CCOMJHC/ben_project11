@@ -7,8 +7,6 @@ robot:
 
 plugins:
   transit: project11_navigation/NavCore
-  hover: hover/Hover
-  last_step: path_follower/PathFollower
 
 
 transit:

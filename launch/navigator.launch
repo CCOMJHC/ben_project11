@@ -7,14 +7,14 @@
   </node>
 
   <node pkg="project11_navigation" type="navigator" name="navigator" ns="$(arg namespace)">
+    <rosparam file="$(find project11_navigation)/config/default_stack.yaml" command="load"/>
     <rosparam file="$(find ben_project11)/config/navigator.yaml" command="load"/>
-    <param name="base_frame" value="$(arg namespace)/base_link"/>
     <remap from="~/cmd_vel" to="project11/piloting_mode/autonomous/cmd_vel"/>
     <remap from="~/enable" to="project11/piloting_mode/autonomous/active"/>
     <remap from="odom" to="project11/odom"/>
   </node>
 
-  <node name="crab_angle_pid" pkg="pid" type="controller" ns="$(arg namespace)/navigator/nav_core/PathFollowerPlanner">
+  <node name="crab_angle_pid_nav_core" pkg="pid" type="controller" ns="$(arg namespace)/navigator/nav_core/PathFollowerPlanner">
     <param name="Kp" value="6.0" />
     <param name="Ki" value="0.5" />
     <param name="Kd" value="0.6" />
@@ -28,7 +28,7 @@
     <remap from="state" to="crab_angle_pid/state"/>
   </node>
 
-  <node name="crab_angle_pid_survey_line" pkg="pid" type="controller" ns="$(arg namespace)/navigator/survey_line/PathFollower">
+  <node name="crab_angle_pid" pkg="pid" type="controller" ns="$(arg namespace)/navigator/TaskToTwistWorkflow/path_follower">
     <param name="Kp" value="6.0" />
     <param name="Ki" value="0.5" />
     <param name="Kd" value="0.6" />

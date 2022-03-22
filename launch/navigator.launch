@@ -1,6 +1,5 @@
 <launch>
   <arg name="namespace" default="ben"/>
-  <arg name="show_costmap" default="false"/>
 
   <node pkg="mission_manager" type="mission_manager_navigator.py" name="mission_manager" ns="$(arg namespace)">
       <param name="map_frame" value="$(arg namespace)/map"/>
@@ -12,39 +11,6 @@
     <remap from="~/cmd_vel" to="project11/piloting_mode/autonomous/cmd_vel"/>
     <remap from="~/enable" to="project11/piloting_mode/autonomous/active"/>
     <remap from="odom" to="project11/odom"/>
-  </node>
-
-  <node name="crab_angle_pid_nav_core" pkg="pid" type="controller" ns="$(arg namespace)/navigator/nav_core/PathFollowerPlanner">
-    <param name="Kp" value="6.0" />
-    <param name="Ki" value="0.5" />
-    <param name="Kd" value="0.6" />
-    <param name="upper_limit" value="90" />
-    <param name="lower_limit" value="-90" />
-    <param name="windup_limit" value="50" />
-    <remap from="control_effort" to="crab_angle_pid/control_effort"/>
-    <remap from="pid_debug" to="crab_angle_pid/pid_debug"/>
-    <remap from="pid_enable" to="crab_angle_pid/pid_enable"/>
-    <remap from="setpoint" to="crab_angle_pid/setpoint"/>
-    <remap from="state" to="crab_angle_pid/state"/>
-  </node>
-
-  <node name="crab_angle_pid" pkg="pid" type="controller" ns="$(arg namespace)/navigator/TaskToTwistWorkflow/path_follower">
-    <param name="Kp" value="6.0" />
-    <param name="Ki" value="0.5" />
-    <param name="Kd" value="0.6" />
-    <param name="upper_limit" value="90" />
-    <param name="lower_limit" value="-90" />
-    <param name="windup_limit" value="50" />
-    <remap from="control_effort" to="crab_angle_pid/control_effort"/>
-    <remap from="pid_debug" to="crab_angle_pid/pid_debug"/>
-    <remap from="pid_enable" to="crab_angle_pid/pid_enable"/>
-    <remap from="setpoint" to="crab_angle_pid/setpoint"/>
-    <remap from="state" to="crab_angle_pid/state"/>
-  </node>
-
-
-  <node if="$(arg show_costmap)" name="grid_to_display" pkg="project11_navigation" type="occupancy_grid_to_display.py" ns="$(arg namespace)">
-    <remap from="occupancy_grid" to="navigator/nav_core/global_costmap/costmap"/>
   </node>
 
 </launch>

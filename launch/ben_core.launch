@@ -1,0 +1,24 @@
+<launch>
+  <arg name="namespace" default="ben"/>
+  <arg name="default_nav_stack" default="true"/>
+  <arg name="enableBridge" default="true"/>
+
+  <include file="$(find ben_description)/launch/load.launch">
+    <arg name="namespace" value="$(arg namespace)"/>
+  </include>
+
+  <include file="$(find ben_description)/launch/publish_state.launch">
+    <arg name="namespace" value="$(arg namespace)"/>
+  </include>
+  
+  <include file="$(find project11)/launch/robot_core.launch">
+    <arg name="namespace" value="$(arg namespace)"/>
+    <arg name="default_nav_stack" value="$(arg default_nav_stack)"/>
+    <arg name="enableBridge" value="$(arg enableBridge)"/>
+  </include>
+
+  <rosparam command="load" file="$(find ben_project11)/config/ben.yaml" ns="$(arg namespace)"/>
+
+  <rosparam if="$(arg default_nav_stack)" file="$(find ben_project11)/config/navigator.yaml" command="load" ns="$(arg namespace)/navigator"/>
+
+</launch>

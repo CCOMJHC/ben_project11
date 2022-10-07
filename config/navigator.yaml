@@ -11,10 +11,15 @@ plugins:
   TaskToTaskWorkflow:
     alex_planner: alex_path_planner/AlexPathPlanner
 
+TaskToTaskWorkflow/alex_planner:
+  planning_time: 5.0
+  time_horizon: 300.0
+  time_minimum: 10.0
+  planner: BitStar
 
-TaskToTwistWorkflow/survey_line:
-  steps:
-    - alex_planner
+# TaskToTwistWorkflow/survey_line:
+#   steps:
+#     - alex_planner
 
 TaskToTwistWorkflow/path_follower:
   pid:

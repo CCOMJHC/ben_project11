@@ -1,4 +1,6 @@
 robot:
+  turn_radius: 10.0
+  
   max_velocity:
     linear/x: 2.75
 

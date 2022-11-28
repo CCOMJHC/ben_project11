@@ -1,7 +1,7 @@
 <launch>
   <arg name="namespace" default="operator"/>
   <arg name="robotNamespace" default="ben"/>
-  <arg name="logDirectory"/>
+  <arg name="logDirectory" default="$(find project11)/logs"/>
 
   <rosparam command="load" file="$(find ben_project11)/config/ben_operator.yaml" ns="$(arg namespace)"/>
 
@@ -23,11 +23,11 @@
 
   <rosparam command="load" file="$(find ben_hardware)/config/operator.yaml" ns="$(arg namespace)"/>
 
-  <include file="$(find project11)/launch/operator_loggers_mystique.launch">
+  <!-- <include file="$(find project11)/launch/operator_loggers_mystique.launch">
     <arg name="namespace" value="$(arg namespace)"/>
     <arg name="robotNamespace" value="$(arg robotNamespace)"/>
     <arg name="logDirectory" value="$(arg logDirectory)"/>
-  </include>
+  </include> -->
 
 </launch>
 

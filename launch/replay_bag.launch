@@ -15,11 +15,11 @@
 
   <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizConfig)"/>
 
-  <node name="filter" pkg="pointcloud2_spherical_filter" type="pointcloud2_spherical_filter_node" ns="$(arg robotNamespace)/sensors/lidar">
+  <!-- <node name="filter" pkg="pointcloud2_spherical_filter" type="pointcloud2_spherical_filter_node" ns="$(arg robotNamespace)/sensors/lidar">
     <rosparam param="excludes">[{min: 0.0, max: 1.0}, {min: 34.0, max: 40.5}]</rosparam>
     <remap from="input" to="velodyne_points"/>
     <remap from="output" to="velodyne_points_filtered"/>
-  </node>
+  </node> -->
 
   <!-- <node pkg="octomap_server" type="octomap_server_node" name="octomap_server" ns="$(arg robotNamespace)/sensors/lidar">
     <remap from="cloud_in" to="velodyne_points_filtered"/>
@@ -27,8 +27,8 @@
     <param name="frame_id" value="$(arg robotNamespace)/map"/>
   </node> -->
 
-  <rosparam file="$(find ben_project11)/config/costmap.yaml" command="load" ns="$(arg robotNamespace)/costmap/costmap" />
-  <node pkg="costmap_2d" type="costmap_2d_node" name="costmap" ns="$(arg robotNamespace)" />
+  <!-- <rosparam file="$(find ben_project11)/config/costmap.yaml" command="load" ns="$(arg robotNamespace)/costmap/costmap" />
+  <node pkg="costmap_2d" type="costmap_2d_node" name="costmap" ns="$(arg robotNamespace)" /> -->
 
   <node pkg="rosbag" type="play" name="bagplay" args="--clock --delay=$(arg delay) --start=$(arg startTime) --loop $(arg bagFile)" ns="$(arg robotNamespace)">
     <remap from="clock" to="/clock"/>

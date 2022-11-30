@@ -19,7 +19,14 @@
   </include>
 
   <node pkg="mbr" type="mbr_logging.py" name="mbr_node" ns="$(arg namespace)"/>
-  <node pkg="ubiquiti" type="ubiquiti_node.py" name="ubiquity" ns="$(arg namespace)"/>
+
+  <node pkg="ubiquiti" type="ubiquiti_bullet_node.py" name="ubiquity_2g" ns="$(arg namespace)">
+    <param name="ipaddress" value="192.168.101.45"/>
+  </node>
+
+  <node pkg="ubiquiti" type="ubiquiti_node.py" name="ubiquity_5g" ns="$(arg namespace)">
+    <param name="ipaddress" value="192.168.101.75"/>
+  </node>
 
   <rosparam command="load" file="$(find ben_hardware)/config/operator.yaml" ns="$(arg namespace)"/>
 

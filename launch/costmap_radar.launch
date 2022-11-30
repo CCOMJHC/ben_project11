@@ -1,0 +1,8 @@
+<launch>
+  <arg name="namespace" default="ben"/>
+
+  <rosparam file="$(find ben_project11)/config/costmap_radar.yaml" command="load" ns="$(arg namespace)/costmap/costmap" />
+  <node pkg="costmap_2d" type="costmap_2d_node" name="costmap" ns="$(arg namespace)">
+    <remap from="costmap/costmap/radar/radar" to="sensors/radar/HaloA/data"/>
+  </node>
+</launch>

@@ -10,7 +10,7 @@ width: 1000
 height: 1000
 resolution: 1.0
 max_obstacle_height: 5
-always_send_full_costmap: false
+always_send_full_costmap: true
 
 radar:
   blanking_distance: 8.0

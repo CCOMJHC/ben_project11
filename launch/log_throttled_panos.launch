@@ -10,7 +10,7 @@
   <node pkg="topic_tools" type="throttle" name="throttle_pano_5" args="messages /ben/sensors/cameras/pano_5/image_raw .2"/>
   <node pkg="topic_tools" type="throttle" name="throttle_pano_6" args="messages /ben/sensors/cameras/pano_6/image_raw .2"/>
 
-  <node pkg="rosbag" type="record" name="pano_logger_throttled"  ns="$(arg namespace)" args="-o $(arg logDirectory)/cameras_throttled --lz4 --split --duration=$(arg duration)
+  <node pkg="rosbag" type="record" name="pano_logger_throttled"  ns="$(arg namespace)" args="-o $(arg logDirectory)/cameras_throttled --lz4 --split --duration=$(arg duration) --repeat-latched
         /tf
         /tf_static
         /$(arg namespace)/nav/active_sensor

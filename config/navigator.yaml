@@ -40,6 +40,7 @@ costmap:
     width: 10000
     height: 10000
     resolution: 3
+    always_send_full_costmap: true
 
     inflation:
         inflation_radius: 100

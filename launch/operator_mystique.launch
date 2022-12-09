@@ -21,7 +21,6 @@
 
   <node pkg="mbr" type="mbr_logging.py" name="mbr_node" ns="$(arg namespace)">
     <param name="MBRipaddress" value="10.19.9.206"/>
-    <param password="1stx_Admin"/>
   </node>
 
   <node pkg="ubiquiti" type="ubiquiti_bullet_node.py" name="ubiquity_2g" ns="$(arg namespace)">

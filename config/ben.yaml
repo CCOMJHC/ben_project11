@@ -29,3 +29,10 @@ udp_bridge/remotes:
           sensors_cameras_pano_4_camera_info: {source: sensors/cameras/pano_4/camera_info}
           sensors_cameras_pano_5_camera_info: {source: sensors/cameras/pano_5/camera_info}
           sensors_cameras_pano_6_camera_info: {source: sensors/cameras/pano_6/camera_info}
+          navigator_costmap: {source: navigator/costmap/costmap}
+          navigator_costmap_updates: {source: navigator/costmap/costmap_updates}
+          sensors_lidar_costmap: {source: sensors/lidar/projected_map}
+          sensors_radar_haloa_costmap: {source: sensors/radar/HaloA/costmap/costmap/costmap}
+          sensors_radar_haloa_costmap_updates: {source: sensors/radar/HaloA/costmap/costmap/costmap_updates}
+          sensors_radar_halob_costmap: {source: sensors/radar/HaloB/costmap/costmap/costmap}
+          sensors_radar_halob_costmap_updates: {source: sensors/radar/HaloB/costmap/costmap/costmap_updates}

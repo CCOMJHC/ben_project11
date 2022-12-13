@@ -17,9 +17,15 @@ helm_manager/helm/max_yaw_speed: 0.5
 udp_bridge/remotes:
     operator:
         topics:
-          sensors_cameras_pano_1_yolo4_bounding_boxes: {source: sensors/cameras/pano_1/yolo4/bounding_boxes}
-          sensors_cameras_pano_2_yolo4_bounding_boxes: {source: sensors/cameras/pano_2/yolo4/bounding_boxes}
-          sensors_cameras_pano_3_yolo4_bounding_boxes: {source: sensors/cameras/pano_3/yolo4/bounding_boxes}
-          sensors_cameras_pano_4_yolo4_bounding_boxes: {source: sensors/cameras/pano_4/yolo4/bounding_boxes}
-          sensors_cameras_pano_5_yolo4_bounding_boxes: {source: sensors/cameras/pano_5/yolo4/bounding_boxes}
-          sensors_cameras_pano_6_yolo4_bounding_boxes: {source: sensors/cameras/pano_6/yolo4/bounding_boxes}
+          sensors_cameras_pano_1_yolo4_detections: {source: sensors/cameras/pano_1/yolo4/detections}
+          sensors_cameras_pano_2_yolo4_detections: {source: sensors/cameras/pano_2/yolo4/detections}
+          sensors_cameras_pano_3_yolo4_detections: {source: sensors/cameras/pano_3/yolo4/detections}
+          sensors_cameras_pano_4_yolo4_detections: {source: sensors/cameras/pano_4/yolo4/detections}
+          sensors_cameras_pano_5_yolo4_detections: {source: sensors/cameras/pano_5/yolo4/detections}
+          sensors_cameras_pano_6_yolo4_detections: {source: sensors/cameras/pano_6/yolo4/detections}
+          sensors_cameras_pano_1_camera_info: {source: sensors/cameras/pano_1/camera_info}
+          sensors_cameras_pano_2_camera_info: {source: sensors/cameras/pano_2/camera_info}
+          sensors_cameras_pano_3_camera_info: {source: sensors/cameras/pano_3/camera_info}
+          sensors_cameras_pano_4_camera_info: {source: sensors/cameras/pano_4/camera_info}
+          sensors_cameras_pano_5_camera_info: {source: sensors/cameras/pano_5/camera_info}
+          sensors_cameras_pano_6_camera_info: {source: sensors/cameras/pano_6/camera_info}

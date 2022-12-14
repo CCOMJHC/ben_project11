@@ -1,26 +1,33 @@
 <launch>
   <arg name="namespace" default="ben"/>
-  <arg name="duration" default="15m"/>
-  <arg name="lidarDuration" default="1h"/>
+  <arg name="duration" default="2m"/>
 
-  <node pkg="rosbag" type="record" name="pano_logger"  ns="$(arg namespace)" args="-o $(find project11)/logs/cameras --split --duration=$(arg duration)
+  <node pkg="rosbag" type="record" name="sensors_logger"  ns="$(arg namespace)" args="-o $(find project11)/logs/sensors --repeat-latched --lz4 --split --duration=$(arg duration)
         /tf
         /tf_static
-        nav/active_sensor
+        sensors/cameras/pano_1/camera_info
         sensors/cameras/pano_1/image_raw
+        sensors/cameras/pano_1/yolo4/detections
+        sensors/cameras/pano_2/camera_info
         sensors/cameras/pano_2/image_raw
+        sensors/cameras/pano_2/yolo4/detections
+        sensors/cameras/pano_3/camera_info
         sensors/cameras/pano_3/image_raw
+        sensors/cameras/pano_3/yolo4/detections
+        sensors/cameras/pano_4/camera_info
         sensors/cameras/pano_4/image_raw
+        sensors/cameras/pano_4/yolo4/detections
+        sensors/cameras/pano_5/camera_info
         sensors/cameras/pano_5/image_raw
+        sensors/cameras/pano_5/yolo4/detections
+        sensors/cameras/pano_6/camera_info
         sensors/cameras/pano_6/image_raw
-        " />
-
-  <node pkg="rosbag" type="record" name="lidar_logger"  ns="$(arg namespace)" args="-o $(find project11)/logs/lidar --split --duration=$(arg lidarDuration)
-        /tf
-        /tf_static
-        nav/active_sensor
-        
+        sensors/cameras/pano_6/yolo4/detections
         sensors/lidar/velodyne_points
+        sensors/radar/HaloA/data
+        sensors/radar/HaloA/state
+        sensors/radar/HaloB/data
+        sensors/radar/HaloB/state
         " />
 
 

@@ -11,7 +11,6 @@ Panels:
         - /Lidar Map1
         - /Navigator Map1
         - /Marker1
-        - /Marker1/Status1
       Splitter Ratio: 0.6208333373069763
     Tree Height: 1792
   - Class: rviz/Selection
@@ -31,7 +30,7 @@ Panels:
   - Class: rviz/Time
     Name: Time
     SyncMode: 0
-    SyncSource: Lidar Filtered Pointcloud
+    SyncSource: ""
 Preferences:
   PromptSaveOnExit: true
 Toolbars:
@@ -285,7 +284,7 @@ Visualization Manager:
       Marker Topic: /ben/detections/pano_5/markers
       Name: Marker
       Namespaces:
-        darknet: true
+        {}
       Queue Size: 100
       Value: true
     - Alpha: 1
@@ -316,6 +315,14 @@ Visualization Manager:
       Use Fixed Frame: true
       Use rainbow: true
       Value: true
+    - Class: rviz/MarkerArray
+      Enabled: true
+      Marker Topic: /ben/navigator/visualization_markers
+      Name: Navigator Markers
+      Namespaces:
+        "": true
+      Queue Size: 100
+      Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
@@ -344,7 +351,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 1164.2205810546875
+      Distance: 511.3924560546875
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -352,17 +359,17 @@ Visualization Manager:
         Value: false
       Field of View: 0.7853981852531433
       Focal Point:
-        X: -0.8230881690979004
-        Y: 0.9554784893989563
-        Z: 0.02753959223628044
+        X: 2.4654347896575928
+        Y: 3.2827394008636475
+        Z: 10.366360664367676
       Focal Shape Fixed Size: false
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 1.5597963333129883
+      Pitch: 0.614797055721283
       Target Frame: ben/base_link_north_up
-      Yaw: 4.980407238006592
+      Yaw: 4.445404052734375
     Saved: ~
 Window Geometry:
   Displays:
@@ -380,5 +387,5 @@ Window Geometry:
   Views:
     collapsed: true
   Width: 1920
-  X: 1920
+  X: 1910
   Y: 2160

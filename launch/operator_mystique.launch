@@ -33,7 +33,7 @@
 
   <rosparam command="load" file="$(find ben_hardware)/config/operator.yaml" ns="$(arg namespace)"/>
 
-  <node pkg="rosbag" type="record" name="ben_operator_logger"  ns="$(arg namespace)" args="-o $(arg logDirectory)/operator --split --duration=10m --lz4 -a" />
+  <node pkg="rosbag" type="record" name="ben_operator_logger"  ns="$(arg namespace)" args="-o $(arg logDirectory)/operator --repeat-latched --split --duration=10m --lz4 -a" />
 
   <!-- <include file="$(find project11)/launch/operator_loggers_mystique.launch">
     <arg name="namespace" value="$(arg namespace)"/>

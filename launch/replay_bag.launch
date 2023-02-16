@@ -11,9 +11,17 @@
     <arg name="namespace" value="$(arg robotNamespace)"/>
   </include>
 
-  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" ns="$(arg robotNamespace)"/>
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" ns="$(arg robotNamespace)">
+    <remap from="/tf" to="/tf_dummy"/>
+  </node>
 
   <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizConfig)"/>
+
+  <include file="$(find ben_project11)/launch/operator_ui.launch">
+    <arg name="namespace" value="$(arg robotNamespace)"/>
+  </include>
+
+  <rosparam command="load" file="$(find ben_project11)/config/ben_operator.yaml" ns="$(arg robotNamespace)"/>
 
   <!-- <node name="filter" pkg="pointcloud2_spherical_filter" type="pointcloud2_spherical_filter_node" ns="$(arg robotNamespace)/sensors/lidar">
     <rosparam param="excludes">[{min: 0.0, max: 1.0}, {min: 34.0, max: 40.5}]</rosparam>

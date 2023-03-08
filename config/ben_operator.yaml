@@ -7,6 +7,6 @@ project11/platforms/ben:
   reference_x: 0.525
   nav_sources:
     combined:
-      position_topic: /ben/project11/nav/position
-      orientation_topic: /ben/project11/nav/orientation
-      velocity_topic: /ben/project11/nav/velocity
+      position_topic: /ben/sensors/nav/position
+      orientation_topic: /ben/sensors/nav/orientation
+      velocity_topic: /ben/sensors/nav/velocity

@@ -11,7 +11,8 @@ mru_transform/sensors:
    topics: { position: 'sensors/oem/sync/position', orientation: 'sensors/oem/sync/orientation', velocity: 'sensors/oem/sync/velocity'}
       
 helm_manager/output_type: 'helm'
-helm_manager/helm/max_yaw_speed: 0.5
+helm_manager/max_yaw_speed: 0.5
+helm_manager/max_speed: 2.75
 helm_manager/helm/pid/Kp: 0.36
 helm_manager/helm/pid/Ki: 1.0
 helm_manager/helm/pid/Kd: 0.01

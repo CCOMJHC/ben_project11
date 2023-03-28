@@ -11,17 +11,12 @@ robot:
 
 plugins:
   TaskToTaskWorkflow:
-    alex_planner: alex_path_planner/AlexPathPlanner
+    ccom_planner: ccom_planner/Planner
 
-TaskToTaskWorkflow/alex_planner:
-  planning_time: 5.0
-  time_horizon: 300.0
-  time_minimum: 10.0
-  planner: BitStar
-
-# TaskToTwistWorkflow/survey_line:
-#   steps:
-#     - alex_planner
+TaskToTwistWorkflow/transit:
+  steps:
+    - ccom_planner
+  last_step: path_follower
 
 TaskToTwistWorkflow/path_follower:
   pid:
@@ -37,14 +32,14 @@ costmap:
     publish_frequency: 0.5
     update_frequency: 0.5
     rolling_window: true
-    width: 10000
-    height: 10000
-    resolution: 3
+    width: 5000
+    height: 5000
+    resolution: 1.5
     always_send_full_costmap: true
 
     inflation:
-        inflation_radius: 100
-        cost_scaling_factor: 0.05
+      inflation_radius: 250
+      cost_scaling_factor: 0.01
 
     chart:
       update_timeout: 1.0

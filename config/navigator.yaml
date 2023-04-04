@@ -32,14 +32,14 @@ costmap:
     publish_frequency: 0.5
     update_frequency: 0.5
     rolling_window: true
-    width: 5000
-    height: 5000
+    width: 3000
+    height: 3000
     resolution: 1.5
     always_send_full_costmap: true
 
     inflation:
-      inflation_radius: 250
-      cost_scaling_factor: 0.01
+      inflation_radius: 150
+      cost_scaling_factor: 0.006
 
     chart:
       update_timeout: 1.0

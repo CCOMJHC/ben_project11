@@ -6,7 +6,7 @@ project11/platforms/ben:
   length: 4.25
   reference_x: 0.525
   nav_sources:
-    combined:
-      position_topic: /ben/sensors/nav/position
-      orientation_topic: /ben/sensors/nav/orientation
-      velocity_topic: /ben/sensors/nav/velocity
+    posmv:
+      position_topic: /ben/sensors/posmv/position
+      orientation_topic: /ben/sensors/posmv/orientation
+      velocity_topic: /ben/sensors/posmv/velocity

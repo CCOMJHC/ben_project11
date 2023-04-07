@@ -1,8 +1,19 @@
 <launch>
 
-   <node pkg="rosbag" type="record" name="rosbag_record_cbw" 
-         args ="record --split --size=1024 --lz4 -o /home/field/project11/logs/temps/cbw /ben/control_by_web_status" />
-   <node pkg="rosbag" type="record" name="rosbag_record_diag"  
-         args ="record --split --size=1024 --lz4 -o /home/field/project11/logs/temps/diag /diagnostics" />
+   <arg name="duration" default="15m"/>
+   <arg name="namespace" default="ben"/>   
+
+   <node pkg="rosbag" type="record" name="temp_logger"  ns="$(arg namespace)" args="-o /home/field/project11/logs/temps/temp_test --lz4 --split --duration=$(arg duration) --repeat-latched
+      /ben/control_by_web_status
+      /diagnostics
+      /ben/control_by_web_status/em2040Amps
+      /ben/control_by_web_status/jetson1Amps
+      /ben/control_by_web_status/jetson2Amps
+      /ben/control_by_web_status/mystiqueAmps
+      /ben/control_by_web_status/posmvAmps
+      /ben/control_by_web_status/stormAmps
+
+   " />
+   
 
 </launch>

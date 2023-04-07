@@ -25,6 +25,13 @@ TaskToTwistWorkflow/path_follower:
     Kd: 0.6
 
 
+grids:
+  static:
+    chart_global: s57_grids/grids/global
+    chart_local: s57_grids/grids/global
+  dynamic:
+    halo_a: sensors/radar/HaloA/grid_map
+
 costmap:
     plugins: 
     - {name: chart,            type: "s57_layer::S57Layer"}

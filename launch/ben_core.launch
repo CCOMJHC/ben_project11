@@ -20,6 +20,19 @@
   <node pkg="s57_grids" type="s57_grids" name="s57_grids" ns="$(arg namespace)">
   </node>
 
+  <group ns="$(arg namespace)/sensors/radar/HaloA">
+    <node pkg="marine_radar_tracker" type="marine_radar_tracker" name="marine_radar_tracker">
+      <param name="map_frame" value="$(arg namespace)/map"/>
+      <remap from="radar_data" to="data"/>
+      <param name="minimum_range" value="10.0"/>
+    </node>
+
+    <node pkg="marine_radar_tracker" type="marine_radar_to_pointcloud" name="marine_radar_to_pointcloud">
+      <remap from="radar_data" to="data"/>
+    </node>
+  </group>
+
+
   <rosparam command="load" file="$(find ben_project11)/config/ben.yaml" ns="$(arg namespace)"/>
 
   <rosparam if="$(arg default_nav_stack)" file="$(find ben_project11)/config/navigator.yaml" command="load" ns="$(arg namespace)/navigator"/>

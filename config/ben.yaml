@@ -20,6 +20,10 @@ asv_helm/pid/max_dt: 1.0
 udp_bridge/remotes:
     operator:
         topics:
+          asv_helm_pid: {source: asv_helm/pid/debug}
+          autonomous_cmd_vel: {source: project11/piloting_mode/autonomous/cmd_vel}
+          control_cmd_vel: {source: project11/control/cmd_vel}
+          odom: {source: project11/odom}
           sensors_cameras_pano_1_yolo4_detections: {source: sensors/cameras/pano_1/yolo4/detections}
           sensors_cameras_pano_2_yolo4_detections: {source: sensors/cameras/pano_2/yolo4/detections}
           sensors_cameras_pano_3_yolo4_detections: {source: sensors/cameras/pano_3/yolo4/detections}

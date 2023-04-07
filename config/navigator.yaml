@@ -43,6 +43,8 @@ costmap:
 
     chart:
       update_timeout: 1.0
+      minimum_depth: 0.5
+      maximum_caution_depth: 10.0
 
     global_frame: ben/map
     robot_base_frame: ben/base_link

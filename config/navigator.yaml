@@ -1,11 +1,18 @@
 robot:
-  turn_radius: 10.0
+  turn_radius:
+  - velocity: 0.5
+    radius: 2.0
+  - velocity: 2.75
+    radius: 10.0
   
   max_velocity:
     linear/x: 2.75
 
   default_velocity:
     linear/x: 2.5
+
+  min_velocity:
+    linear/x: 0.5
 
   footprint: [[2.65, 0], [2.6, 0.1], [2.4, 0.4], [1.9, 0.6], [1.0, 0.85], [-1.3, 0.85], [-1.35, 0.4], [-1.6, 0.35], [-1.6, -0.35], [-1.35, -0.4], [-1.3, -0.85], [1.0, -0.85], [1.9, -0.6], [2.4, -0.4], [2.6, -0.1], [2.65, 0]]
 
@@ -28,7 +35,7 @@ TaskToTwistWorkflow/path_follower:
 grids:
   static:
     chart_global: s57_grids/grids/global
-    chart_local: s57_grids/grids/global
+    chart_local: s57_grids/grids/local
   dynamic:
     halo_a: sensors/radar/HaloA/grid_map
 

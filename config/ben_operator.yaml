@@ -14,3 +14,7 @@ project11/platforms/ben:
       position_topic: /ben/sensors/nav/position
       orientation_topic: /ben/sensors/nav/orientation
       velocity_topic: /ben/sensors/nav/velocity
+    oem:
+      position_topic: /ben/sensors/oem/position
+      orientation_topic: /ben/sensors/oem/orientation
+      velocity_topic: /ben/sensors/oem/velocity

@@ -31,7 +31,6 @@ TaskToTwistWorkflow/path_follower:
     Ki: 0.5
     Kd: 0.6
 
-
 grids:
   static:
     chart_global: s57_grids/grids/global

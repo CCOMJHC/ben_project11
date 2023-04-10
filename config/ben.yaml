@@ -3,7 +3,7 @@ mru_transform/sensors:
  - name: posmv
    topics: { position: 'sensors/posmv/position', orientation: 'sensors/posmv/orientation', velocity: 'sensors/posmv/velocity'}
  - name: gps
-   topics: { position: 'sensors/oem/sync/position', orientation: 'sensors/oem/sync/orientation', velocity: 'sensors/oem/sync/velocity'}
+   topics: { position: 'sensors/oem/position', orientation: 'sensors/oem/orientation', velocity: 'sensors/oem/velocity'}
       
 helm_manager/output_type: 'dual'
 helm_manager/max_yaw_speed: 0.5
@@ -31,6 +31,10 @@ project11/platforms/ben:
       position_topic: /ben/sensors/nav/position
       orientation_topic: /ben/sensors/nav/orientation
       velocity_topic: /ben/sensors/nav/velocity
+    oem:
+      position_topic: /ben/sensors/oem/position
+      orientation_topic: /ben/sensors/oem/orientation
+      velocity_topic: /ben/sensors/oem/velocity
 
 s57_grids:
   map_frame: ben/map

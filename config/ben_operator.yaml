@@ -1,16 +1,2 @@
 udp_bridge/remotes/robot/name: ben
 
-project11/platforms/ben:
-  robot_description: ben/robot_description
-  width: 1.7
-  length: 4.25
-  reference_x: 0.525
-  nav_sources:
-    posmv:
-      position_topic: /ben/sensors/posmv/position
-      orientation_topic: /ben/sensors/posmv/orientation
-      velocity_topic: /ben/sensors/posmv/velocity
-    nav:
-      position_topic: /ben/sensors/nav/position
-      orientation_topic: /ben/sensors/nav/orientation
-      velocity_topic: /ben/sensors/nav/velocity

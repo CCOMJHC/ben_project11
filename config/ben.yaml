@@ -35,6 +35,11 @@ project11/platforms/ben:
       position_topic: /ben/sensors/oem/position
       orientation_topic: /ben/sensors/oem/orientation
       velocity_topic: /ben/sensors/oem/velocity
+  color:
+    red: 1.0
+    green: 0.8
+    blue: 0.1
+
 
 s57_grids:
   map_frame: ben/map

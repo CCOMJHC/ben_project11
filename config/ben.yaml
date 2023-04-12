@@ -5,7 +5,7 @@ mru_transform/sensors:
  - name: gps
    topics: { position: 'sensors/oem/position', orientation: 'sensors/oem/orientation', velocity: 'sensors/oem/velocity'}
       
-helm_manager/output_type: 'dual'
+helm_manager/output_type: 'helm'
 helm_manager/max_yaw_speed: 0.5
 helm_manager/max_speed: 2.75
 

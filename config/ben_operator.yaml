@@ -5,6 +5,9 @@ udp_bridge/remotes:
         name: ben_vpn
         host: mystiquev
         port: 4200
+        returnHost: salmon
+        returnPort: 4200
+        maxPacketSize: 1200
         topics:
-          project11_command: {source: project11/command}
-          piloting_mode_manual_helm: {source: project11/piloting_mode/manual/helm}
+          project11_command: {source: /ben/project11/command}
+          piloting_mode_manual_helm: {source: /ben/project11/piloting_mode/manual/helm}

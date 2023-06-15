@@ -91,7 +91,6 @@ udp_bridge/remotes:
           sensors_cameras_pano_6_camera_info: {source: sensors/cameras/pano_6/camera_info}
           sensors_lidar_costmap: {source: sensors/lidar/projected_map}
           s57_local_grid: {source: s57_grids/grids/local}
-          
     operator_vpn:
         host: 192.168.50.142
         port: 4200
@@ -107,7 +106,7 @@ udp_bridge/remotes:
           tf_static: {source: /tf_static}
           sensors_radar_HaloA_state: {source: sensors/radar/HaloA/state}
           sensors_radar_HaloB_state: {source: sensors/radar/HaloB/state}
-                 posmv_position: {source: sensors/posmv/position}
+          posmv_position: {source: sensors/posmv/position}
           posmv_orientation: {source: sensors/posmv/orientation}
           posmv_velocity: {source: sensors/posmv/velocity}
           oem_position: {source: sensors/oem/position}

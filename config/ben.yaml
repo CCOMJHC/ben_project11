@@ -74,6 +74,7 @@ udp_bridge/remotes:
           autonomous_cmd_vel: {source: project11/piloting_mode/autonomous/cmd_vel}
           control_cmd_vel: {source: project11/control/cmd_vel}
           halo_a_grid: {source: sensors/radar/HaloA/grid_map}
+          halo_b_grid: {source: sensors/radar/HaloB/grid_map}
           nav_visualization_markers: {source: navigator/visualization_markers}
           odom: {source: project11/odom}
           sensors_cameras_pano_1_yolo4_detections: {source: sensors/cameras/pano_1/yolo4/detections}
@@ -91,3 +92,25 @@ udp_bridge/remotes:
           sensors_lidar_costmap: {source: sensors/lidar/projected_map}
           s57_local_grid: {source: s57_grids/grids/local}
           
+    operator_vpn:
+        host: 192.168.50.142
+        port: 4200
+        topics:
+          halo_a_grid: {source: sensors/radar/HaloA/grid_map}
+          nav_visualization_markers: {source: navigator/visualization_markers}
+          odom: {source: project11/odom}
+          project11_heartbeat: {source: project11/heartbeat}
+          project11_status_mission_manager: {source: project11/status/mission_manager}
+          project11_response: {source: project11/response}
+          diagnostics: {source: /diagnostics}
+          tf: {source: /tf}
+          tf_static: {source: /tf_static}
+          sensors_radar_HaloA_state: {source: sensors/radar/HaloA/state}
+          sensors_radar_HaloB_state: {source: sensors/radar/HaloB/state}
+                 posmv_position: {source: sensors/posmv/position}
+          posmv_orientation: {source: sensors/posmv/orientation}
+          posmv_velocity: {source: sensors/posmv/velocity}
+          oem_position: {source: sensors/oem/position}
+          oem_orientation: {source: sensors/oem/orientation}
+          oem_velocity: {source: sensors/oem/velocity}
+   

@@ -34,6 +34,7 @@ TaskToTwistWorkflow/path_follower:
 grids:
   static:
     chart_global: s57_grids/grids/global
+    chart_area: s57_grids/grids/area
     chart_local: s57_grids/grids/local
   dynamic:
     halo_a: sensors/radar/HaloA/grid_map

@@ -3,9 +3,6 @@
   <arg name="robotNamespace" default="ben"/>
   <arg name="logDirectory" default="$(find project11)/logs"/>
 
-  <rosparam command="load" file="$(find ben_project11)/config/ben_operator.yaml" ns="$(arg namespace)"/>
-  <rosparam command="load" file="$(find ccomjhc_project11)/configuration/mbr.yaml" ns="$(arg namespace)"/>
-
   <include file="$(find ben_description)/launch/load.launch">
     <arg name="namespace" value="$(arg robotNamespace)"/>
   </include>
@@ -34,6 +31,10 @@
   <rosparam command="load" file="$(find ben_hardware)/config/operator.yaml" ns="$(arg namespace)"/>
 
   <node pkg="rosbag" type="record" name="ben_operator_logger"  ns="$(arg namespace)" args="-o $(arg logDirectory)/operator --repeat-latched --split --duration=10m --lz4 -a" />
+
+  <rosparam command="load" file="$(find ben_project11)/config/ben_operator.yaml" ns="$(arg namespace)"/>
+  <rosparam command="load" file="$(find ben_project11)/config/ben_operator_udp_bridge_vpn.yaml" ns="$(arg namespace)"/>
+  <rosparam command="load" file="$(find ccomjhc_project11)/configuration/mbr.yaml" ns="$(arg namespace)"/>
 
   <!-- <include file="$(find project11)/launch/operator_loggers_mystique.launch">
     <arg name="namespace" value="$(arg namespace)"/>

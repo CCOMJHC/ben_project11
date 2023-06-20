@@ -1,10 +1,2 @@
 udp_bridge/remotes/robot/name: ben
 
-udp_bridge/remotes:
-    robot_vpn:
-        name: ben_vpn
-        host: mystiquev
-        port: 4200
-        topics:
-          project11_command: {source: project11/command}
-          piloting_mode_manual_helm: {source: project11/piloting_mode/manual/helm}

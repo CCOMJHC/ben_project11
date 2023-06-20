@@ -2,4 +2,15 @@
 mru_transform/sensors:
  - name: nav
    topics: { position: 'sensors/nav/position', orientation: 'sensors/nav/orientation', velocity: 'sensors/nav/velocity'}
-      
+
+udp_bridge:      
+  remotes:
+    operator:
+      topics:
+        nav_position: {source: sensors/nav/position}
+        nav_orientation: {source: sensors/nav/orientation}
+        nav_velocity: {source: sensors/nav/velocity}
+
+    operator_vpn:
+      host: localhost
+      port: 4202

@@ -24,7 +24,7 @@
   </node>
 
   <node pkg="ubiquiti" type="ubiquiti_bullet_node.py" name="ubiquity_2g" ns="$(arg namespace)">
-    <param name="ipaddress" value="192.168.101.45"/>
+    <param name="ipaddress" value="10.2.1.3"/>
   </node>
 
   <node pkg="ubiquiti" type="ubiquiti_node.py" name="ubiquity_5g" ns="$(arg namespace)">

@@ -6,11 +6,12 @@ mru_transform/sensors:
 udp_bridge:      
   remotes:
     operator:
-      topics:
-        nav_position: {source: sensors/nav/position}
-        nav_orientation: {source: sensors/nav/orientation}
-        nav_velocity: {source: sensors/nav/velocity}
-
-    operator_vpn:
-      host: localhost
-      port: 4202
+      connections:
+        default:
+          topics:
+            nav_position: {source: sensors/nav/position}
+            nav_orientation: {source: sensors/nav/orientation}
+            nav_velocity: {source: sensors/nav/velocity}
+        vpn:
+          host: localhost
+          port: 4202

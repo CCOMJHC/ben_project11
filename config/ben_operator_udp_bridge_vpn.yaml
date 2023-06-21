@@ -1,6 +1,7 @@
 udp_bridge/remotes:
-    robot_vpn:
-        name: ben_vpn
+  robot:
+    connections:
+      vpn:
         host: mystiquev
         port: 4200
         returnHost: salmon

@@ -68,7 +68,9 @@ s57_grids:
 
 
 udp_bridge/remotes:
-    operator:
+  operator:
+    connections:
+      default:
         topics:
           asv_helm_pid: {source: asv_helm/pid/debug}
           autonomous_cmd_vel: {source: project11/piloting_mode/autonomous/cmd_vel}

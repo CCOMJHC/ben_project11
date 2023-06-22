@@ -94,7 +94,7 @@ udp_bridge/remotes:
           sensors_cameras_pano_6_camera_info: {source: sensors/cameras/pano_6/camera_info}
           sensors_lidar_costmap: {source: sensors/lidar/projected_map}
           s57_local_grid: {source: s57_grids/grids/local}
-    operator_vpn:
+      vpn:
         host: 192.168.50.142
         port: 4200
         topics:

@@ -20,10 +20,10 @@ plugins:
   TaskToTaskWorkflow:
     ccom_planner: ccom_planner/Planner
 
-TaskToTwistWorkflow/transit:
-  steps:
-    - ccom_planner
-  last_step: path_follower
+# TaskToTwistWorkflow/transit:
+#   steps:
+#     - ccom_planner
+#   last_step: path_follower
 
 TaskToTwistWorkflow/path_follower:
   pid:

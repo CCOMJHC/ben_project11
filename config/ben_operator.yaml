@@ -1,2 +1,23 @@
 udp_bridge/remotes/robot/name: ben
 
+udp_bridge/remotes:
+  robot:
+    connections:
+      vpn:
+        host: mystiquev
+        port: 4200
+        returnHost: salmon
+        returnPort: 4200
+        maxPacketSize: 1200
+        topics:
+          project11_command: {source: project11/command}
+          piloting_mode_manual_helm: {source: project11/piloting_mode/manual/helm}
+      wifi:
+        host: mystiquew
+        port: 4200
+        returnHost: salmonw
+        returnPort: 4200
+        maxPacketSize: 1200
+        topics:
+          project11_command: {source: project11/command}
+          piloting_mode_manual_helm: {source: project11/piloting_mode/manual/helm}

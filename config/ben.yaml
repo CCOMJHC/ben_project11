@@ -115,4 +115,18 @@ udp_bridge/remotes:
           oem_position: {source: sensors/oem/position}
           oem_orientation: {source: sensors/oem/orientation}
           oem_velocity: {source: sensors/oem/velocity}
+      wifi:
+        host: salmonw
+        port: 4200
+        topics:
+          nav_visualization_markers: {source: navigator/visualization_markers}
+          project11_heartbeat: {source: project11/heartbeat}
+          project11_status_mission_manager: {source: project11/status/mission_manager}
+          project11_response: {source: project11/response}
+          posmv_position: {source: sensors/posmv/position}
+          posmv_orientation: {source: sensors/posmv/orientation}
+          posmv_velocity: {source: sensors/posmv/velocity}
+          oem_position: {source: sensors/oem/position}
+          oem_orientation: {source: sensors/oem/orientation}
+          oem_velocity: {source: sensors/oem/velocity}
    

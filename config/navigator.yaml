@@ -16,20 +16,28 @@ robot:
 
   footprint: [[2.65, 0], [2.6, 0.1], [2.4, 0.4], [1.9, 0.6], [1.0, 0.85], [-1.3, 0.85], [-1.35, 0.4], [-1.6, 0.35], [-1.6, -0.35], [-1.35, -0.4], [-1.3, -0.85], [1.0, -0.85], [1.9, -0.6], [2.4, -0.4], [2.6, -0.1], [2.65, 0]]
 
+  waypoint_reached_distance: 5.0
+  survey_lead_in_distance: 2.5
+
 plugins:
   TaskToTaskWorkflow:
     ccom_planner: ccom_planner/Planner
 
-# TaskToTwistWorkflow/transit:
-#   steps:
-#     - ccom_planner
-#   last_step: path_follower
+TaskToTwistWorkflow/transit:
+  steps:
+    - ccom_planner
+  last_step: path_follower
 
 TaskToTwistWorkflow/path_follower:
   pid:
     Kp: 6.0
     Ki: 0.5
     Kd: 0.6
+
+TaskToTwistWorkflow/hover:
+  maximum_distance: 5.0
+  minimum_distance: 2.0
+
 
 grids:
   static:

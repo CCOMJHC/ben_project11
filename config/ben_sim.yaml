@@ -13,6 +13,3 @@ udp_bridge:
             nav_position: {source: sensors/nav/position}
             nav_orientation: {source: sensors/nav/orientation}
             nav_velocity: {source: sensors/nav/velocity}
-        vpn:
-          host: localhost
-          port: 4202

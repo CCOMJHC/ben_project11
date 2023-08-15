@@ -1,10 +1,6 @@
 <launch>
   <arg name="namespace" default="ben"/>
 
-  <node pkg="mission_manager" type="mission_manager_navigator.py" name="mission_manager" ns="$(arg namespace)">
-      <param name="map_frame" value="$(arg namespace)/map"/>
-  </node>
-
   <node pkg="project11_navigation" type="navigator" name="navigator" ns="$(arg namespace)">
     <rosparam file="$(find project11_navigation)/config/default_stack.yaml" command="load"/>
     <rosparam file="$(find ben_project11)/config/navigator.yaml" command="load"/>

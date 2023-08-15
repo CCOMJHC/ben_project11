@@ -2,6 +2,7 @@
   <arg name="namespace" default="ben"/>
   <arg name="default_nav_stack" default="true"/>
   <arg name="enableBridge" default="true"/>
+  <arg name="use_ccom_planner" default="false"/>
 
   <include file="$(find ben_description)/launch/load.launch">
     <arg name="namespace" value="$(arg namespace)"/>
@@ -27,6 +28,8 @@
     <rosparam command="load" file="$(find ben_project11)/config/ben.yaml"/>
 
     <rosparam if="$(arg default_nav_stack)" file="$(find ben_project11)/config/navigator.yaml" command="load" ns="navigator"/>
+
+    <rosparam if="$(arg use_ccom_planner)" file="$(find ben_project11)/config/navigator_ccom_planner.yaml" command="load" ns="navigator"/>
   </group>
 
 </launch>

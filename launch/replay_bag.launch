@@ -21,7 +21,6 @@
     <arg name="namespace" value="$(arg robotNamespace)"/>
   </include>
 
-  <rosparam command="load" file="$(find ben_project11)/config/ben_operator.yaml" ns="$(arg robotNamespace)"/>
 
   <!-- <node name="filter" pkg="pointcloud2_spherical_filter" type="pointcloud2_spherical_filter_node" ns="$(arg robotNamespace)/sensors/lidar">
     <rosparam param="excludes">[{min: 0.0, max: 1.0}, {min: 34.0, max: 40.5}]</rosparam>

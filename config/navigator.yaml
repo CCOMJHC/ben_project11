@@ -49,3 +49,13 @@ grids:
   dynamic:
     halo_a: sensors/radar/HaloA/grid_map
 
+hover:
+  maximum_distance: 5.0
+  minimum_distance: 2.0
+  maximum_speed: 1.5
+
+path_follower:
+  pid:
+    Kp: 6.0
+    Ki: 0.5
+    Kd: 0.6

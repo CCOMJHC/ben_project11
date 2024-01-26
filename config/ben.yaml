@@ -54,7 +54,7 @@ udp_bridge:
             autonomous_cmd_vel: {source: project11/piloting_mode/autonomous/cmd_vel}
             control_cmd_vel: {source: project11/control/cmd_vel}
             nav_visualization_markers: {source: navigator/visualization_markers}
-            odom: {source: project11/odom}
+            odom: {source: odom}
             s57_local_grid: {source: s57_grids/grids/local}
 
    

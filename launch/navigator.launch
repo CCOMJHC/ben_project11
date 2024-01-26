@@ -6,7 +6,6 @@
     <rosparam file="$(find ben_project11)/config/navigator.yaml" command="load"/>
     <remap from="~/cmd_vel" to="project11/piloting_mode/autonomous/cmd_vel"/>
     <remap from="~/enable" to="project11/piloting_mode/autonomous/active"/>
-    <remap from="odom" to="project11/odom"/>
   </node>
 
 </launch>

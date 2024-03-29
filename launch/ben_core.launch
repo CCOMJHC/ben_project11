@@ -11,7 +11,8 @@
   <include file="$(find ben_description)/launch/publish_state.launch">
     <arg name="namespace" value="$(arg namespace)"/>
   </include>
-  
+
+  <remap from="local_costmap" to="sensors/lidar/lidar_costmap/costmap/costmap"/>  
   <include file="$(find project11)/launch/robot_core.launch">
     <arg name="namespace" value="$(arg namespace)"/>
     <arg name="default_nav_stack" value="$(arg default_nav_stack)"/>

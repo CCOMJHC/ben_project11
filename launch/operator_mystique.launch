@@ -21,16 +21,16 @@
   </node>
 
   <node pkg="teltonika" type="teltonika_node.py" name="teltonika" ns="$(arg namespace)">
-    <param name="ipaddress" value="192.168.50.52"/>
+    <param name="ipaddress" value="192.168.11.1"/>
   </node>
   
-  <node pkg="ubiquiti" type="ubiquiti_bullet_node.py" name="ubiquity_2g" ns="$(arg namespace)">
+  <!-- <node pkg="ubiquiti" type="ubiquiti_bullet_node.py" name="ubiquity_2g" ns="$(arg namespace)">
     <param name="ipaddress" value="10.2.1.3"/>
   </node>
 
   <node pkg="ubiquiti" type="ubiquiti_node.py" name="ubiquity_5g" ns="$(arg namespace)">
     <param name="ipaddress" value="192.168.100.75"/>
-  </node>
+  </node> -->
 
   <rosparam command="load" file="$(find ben_hardware)/config/operator.yaml" ns="$(arg namespace)"/>
 
@@ -44,6 +44,10 @@
     <arg name="robotNamespace" value="$(arg robotNamespace)"/>
     <arg name="logDirectory" value="$(arg logDirectory)"/>
   </include> -->
+
+  <include file="$(find foxglove_bridge)/launch/foxglove_bridge.launch">
+    <arg name="port" value="8765" />
+  </include>
 
 </launch>
 

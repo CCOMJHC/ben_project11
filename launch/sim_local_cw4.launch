@@ -3,12 +3,12 @@
   <arg name="operator_namespace" default="operator"/>
 
   <param name="/use_sim_time" type="bool" value="true"/>
-  <rosparam command="load" file="$(find ben_project11)/parameters/ben.yaml" ns="$(arg namespace)"/>
+  <rosparam command="load" file="$(find ben_project11)/config/ben.yaml" ns="$(arg namespace)"/>
 
   <arg name="override_mpc" default="false"/>
   <node if="$(arg override_mpc)" pkg="path_follower" type="mpc_adapter_node" name="mpc_adapter" ns="$(arg namespace)"/>
     
-  <include file="$(find project11)/launch/vehicle_core.launch">
+  <include file="$(find project11)/launch/robot_core.launch">
     <arg name="host" value="localhost"/>
     <arg name="override_mpc" value="$(arg override_mpc)"/>
     <arg name="namespace" default="$(arg namespace)"/>
